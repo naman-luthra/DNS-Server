@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/1/1c/ICloud_logo.svg">
+    <title>DNS Server</title>
+</head>
+<body class="">
+    <a href="http://localhost:3000"><img class="w-48 mt-40 mx-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/ICloud_logo.svg/2560px-ICloud_logo.svg.png" alt=""></a>
+    <div class="text-center mt-5 mb-5 text-4xl text-gray-600 font-bold">Welcome to Cloud-DNS</div>
+    <div class="flex justify-center">
+        <form action="/query" method="get">
+            <button class="p-4 m-5 rounded bg-gray-200 text-md font-semibold text-gray-500 transition duration-150 ease-in-out transform hover:scale-125 hover:text-gray-600" type="submit">Query</button>
+        </form>
+        <form action="/addRecord" method="get">
+            <button class="p-4 m-5 rounded bg-gray-200 text-md font-semibold text-gray-500 transition duration-150 ease-in-out transform hover:scale-125 hover:text-gray-600" type="submit">Add Record</button>
+        </form>
+    </div>
+</body>
+</html>
