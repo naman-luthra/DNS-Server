@@ -22,8 +22,6 @@ TTL int
 );
 INSERT INTO 1d5920f4b44b27a802bd77c4f0536f5a (SubDomain, RecordType, PName, Priority, Content,TTL)
 VALUES ('www', 'A', '@', '0','8.8.8.8','100');
-INSERT INTO 1d5920f4b44b27a802bd77c4f0536f5a (SubDomain, RecordType, PName, Priority, Content,TTL)
-VALUES ('www', 'A', '@', '0','8.8.8.8','100');
 INSERT INTO comTLDServer(DomainName,AuthoritativeServer)
 VALUES ('apple','de24b5571deaea7cf4b2a5c00ef66fb7');
 CREATE TABLE de24b5571deaea7cf4b2a5c00ef66fb7(
