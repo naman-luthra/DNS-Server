@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'BITS@lite',
-    database: 'DNS_Server',
+    database: 'DNSServer',
     port: 3306
 });
 connection.connect();
