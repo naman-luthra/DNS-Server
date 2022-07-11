@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/1/1c/ICloud_logo.svg">
+    <title>DNS Server</title>
+</head>
+<body class="">
+    <a href="http://localhost:3000"><img class="w-48 mt-10 mx-auto mb-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/ICloud_logo.svg/2560px-ICloud_logo.svg.png" alt=""></a>
+    <form  autocomplete="off" class="text-center" action="/query" method="post">
+        <label class="p-1 text-gray-700 text-lg font-semibold" for="hostname">Hostname:</label>
+        <input class="mx-2 border-2 rounded p-1" type="text" placeholder="www.google.com" name="hostname">
+        <label class="p-1 text-gray-700 text-lg font-semibold" for="record">Record:</label>
+        <select class="mx-2 border-2 rounded p-1" name="record">
+            <option value="A">A</option>
+            <option value="AAAA">AAAA</option>
+            <option value="CNAME">CNAME</option>
+            <option value="MX">MX</option>
+            <option value="NS">NS</option>
+            <option value="PRT">PRT</option>
+            <option value="CERT">CERT</option>
+            <option value="SRV">SRV</option>
+            <option value="TXT">TXT</option>
+            <option value="SOA">SOA</option>
+        </select>
+        <br>
+        <button class="p-4 m-5 mt-10 rounded-full bg-gray-200 text-md font-semibold text-gray-600 transition duration-150 ease-in-out transform hover:scale-125 hover:text-black" type="submit">Query</button>
+    </form>
+    <% if(qarray.length>0){ %>
+        <div class="mx-auto px-4 grid grid-cols-12 gap-1">
+            <div class="bg-gray-600 text-gray-50 font-semibold p-1 rounded col-span-4 text-center">Hostname</div>
+            <div class="bg-gray-600 text-gray-50 font-semibold p-1 rounded col-span-1 text-center">Type</div>
+            <div class="bg-gray-600 text-gray-50 font-semibold p-1 rounded col-span-1 text-center">Name</div>
+            <div class="bg-gray-600 text-gray-50 font-semibold p-1 rounded col-span-1 text-center">Priority</div>
+            <div class="bg-gray-600 text-gray-50 font-semibold p-1 rounded col-span-4 text-center">Content</div>
+            <div class="bg-gray-600 text-gray-50 font-semibold p-1 rounded col-span-1 text-center">TTL</div>
+            <% for(let i=0;i<qarray.length;i++){ %>
+                <div class="bg-gray-100 p-1 rounded col-span-4 text-center"><%=qarray[i].Hostname%></div>
+                <div class="bg-gray-100 p-1 rounded col-span-1 text-center"><%=qarray[i].RecordType%></div>
+                <div class="bg-gray-100 p-1 rounded col-span-1 text-center"><%=qarray[i].PName%></div>
+                <div class="bg-gray-100 p-1 rounded col-span-1 text-center"><%=qarray[i].Priority%></div>
+                <div class="bg-gray-100 p-1 rounded col-span-4 text-center"><%=qarray[i].Content%></div>
+                <div class="bg-gray-100 p-1 rounded col-span-1 text-center"><%=qarray[i].TTL%></div>
+            <% } %>
+        </div>
+    <% } %>
+</body>
+</html>

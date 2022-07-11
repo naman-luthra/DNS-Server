@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/1/1c/ICloud_logo.svg">
+    <title>DNS Server</title>
+</head>
+<body class="">
+    <a href="http://localhost:3000"><img class="w-48 mt-10 mx-auto mb-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/ICloud_logo.svg/2560px-ICloud_logo.svg.png" alt=""></a>
+    <form  autocomplete="off" class="w-1/2 mx-auto text-center px-5" action="/addRecord" method="post">
+        <div class="justify-center grid grid-cols-2">
+        <label class="my-0.5 mx-auto p-1 text-gray-700 text-lg font-semibold" for="hostname">Hostname:</label>
+        <input class="my-0.5 mx-2 border-2 rounded p-1" type="text" placeholder="www.google.com" name="hostname">
+        <label class="my-0.5 mx-auto p-1 text-gray-700 text-lg font-semibold" for="record">Record:</label>
+        <select class="my-0.5 mx-2 border-2 rounded p-1" name="record">
+            <option value="A">A</option>
+            <option value="AAAA">AAAA</option>
+            <option value="CNAME">CNAME</option>
+            <option value="MX">MX</option>
+            <option value="NS">NS</option>
+            <option value="PRT">PRT</option>
+            <option value="CERT">CERT</option>
+            <option value="SRV">SRV</option>
+            <option value="TXT">TXT</option>
+            <option value="SOA">SOA</option>
+        </select>
+        <label class="my-0.5 mx-auto p-1 text-gray-700 text-lg font-semibold" for="name">Name:</label>
+        <input class="my-0.5 mx-2 border-2 rounded p-1" type="text" placeholder="Name" name="name">
+        <label class="my-0.5 mx-auto p-1 text-gray-700 text-lg font-semibold" for="priority">Priority:</label>
+        <input class="my-0.5 mx-2 border-2 rounded p-1" type="number" placeholder="0" name="priority">
+        <label class="my-0.5 mx-auto p-1 text-gray-700 text-lg font-semibold" for="content">Content:</label>
+        <input class="my-0.5 mx-2 border-2 rounded p-1" type="text" placeholder="Content" name="content">
+        <label class="my-0.5 mx-auto p-1 text-gray-700 text-lg font-semibold" for="ttl">TTL:</label>
+        <input class="my-0.5 mx-2 border-2 rounded p-1" type="number" placeholder="300" name="ttl">
+        </div>
+        <% if(added){ %>
+            <div class="mt-2 text-green-500">Record Added Successfully!</div>
+        <% } %>
+        <% if(faliure){ %>
+            <div class="mt-2 text-red-500">Uh Oh, There was a problem!</div>
+        <% } %>
+        <button class="p-4 mt-4 rounded-full bg-gray-200 text-md font-semibold text-gray-600 transition duration-150 ease-in-out transform hover:scale-125 hover:text-black" type="submit">Add Record</button>
+    </form>
+</body>
+</html>
