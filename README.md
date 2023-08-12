@@ -1,29 +1,70 @@
-# DNS-Server
-### Run Locally
-<hr>
+# DNS-Server Project
 
-To run this code in your local machine, follow these steps:
+Welcome to the DNS-Server project! This guide will walk you through the steps to set up and run the DNS Server application locally on your machine.
 
-*Step 1:* Go to the folder on your desktop where you want the project directory to be created. Open a terminal in this folder and to clone this repository on your machine use the command:
+## Table of Contents
 
-`git clone https://github.com/naman-luthra/DNS-Server`
+- Introduction
+- Getting Started
+  - Prerequisites
+  - Installation
+  - Configuration
+- Usage
+  - Running the Server
+- Accessing the Application
 
-*Step 2:* Go to the project directory and open app.js if you have VSCode installed on your system you can open the file in VSCode using the following command.
+## Introduction
 
-`cd DNS-Server`
+DNS-Server is a lightweight and efficient application that enables you to run your own DNS server locally. With this project, you can gain insights into DNS protocol handling and experiment with custom configurations.
 
-`code app.js`
+## Getting Started
 
-*Step 3:* Now in the 12th line replace BITS@lite with your mySQL root password.
+### Prerequisites
 
-*Step 4:* Now open the `SQL Setup File.sql` and run all the queries in the file to setup the schema required for this application
+Before you begin, ensure you have the following installed on your system:
 
-*Step 5:* Now, in the terminal, inside the project directory, install the npm packages (Make sure you have the latest version of npm installed).
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) (including npm)
+- [MySQL](https://www.mysql.com/)
 
-`npm install`
+### Installation
 
-*Step 8:* Now that we have all the dependencies installed. It's time to run the node server.
+Follow these steps to set up the project:
 
-`node app.js`
+1. Clone the repository to your local machine using the following command:
+   ```sh
+   git clone https://github.com/naman-luthra/DNS-Server
+2. Navigate to the project directory:
+   ```sh
+   cd DNS-Server
+3. Install the required npm packages by running:
+   ```sh
+   npm install
 
-The application is now running on your machine. You can access it by typing *localhost:3000* in your browser.
+### Configuration
+
+1. Open the Setup.sql file and execute all the queries to set up the necessary database schema.
+2. Create a .env file in the project directory and populate it with the following keys:
+   ```
+   DB_HOST=your_db_host
+   DB_USER=root
+   DB_PASSWORD=your_db_password
+   DB_PORT=3306
+   DB_NAME=DNSServer
+   ```
+## Usage
+
+### Running the Server
+
+To start the DNS server, use the following commands:
+
+- For production mode:
+  ```sh
+     npm run start
+- For development mode:
+  ```sh
+     npm run dev
+
+### Accessing the Application
+
+Once the server is running, you can access the DNS Server application by opening your web browser and navigating to `localhost:3000`
