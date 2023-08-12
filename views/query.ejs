@@ -8,7 +8,7 @@
     <title>DNS Server</title>
 </head>
 <body class="">
-    <a href="http://localhost:3000"><img class="w-48 mt-10 mx-auto mb-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/ICloud_logo.svg/2560px-ICloud_logo.svg.png" alt=""></a>
+    <a href="/"><img class="w-48 mt-10 mx-auto mb-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/ICloud_logo.svg/2560px-ICloud_logo.svg.png" alt=""></a>
     <form  autocomplete="off" class="text-center" action="/query" method="post">
         <label class="p-1 text-gray-700 text-lg font-semibold" for="hostname">Hostname:</label>
         <input class="mx-2 border-2 rounded p-1" type="text" placeholder="www.google.com" name="hostname">
@@ -26,7 +26,10 @@
             <option value="SOA">SOA</option>
         </select>
         <br>
-        <button class="p-4 m-5 mt-10 rounded-full bg-gray-200 text-md font-semibold text-gray-600 transition duration-150 ease-in-out transform hover:scale-125 hover:text-black" type="submit">Query</button>
+        <% if(error){ %>
+            <div class="mt-2 text-red-500"><%=error.message%></div>
+        <% } %>
+        <button class="p-4 m-5 mt-2 rounded-full bg-gray-200 text-md font-semibold text-gray-600 transition duration-150 ease-in-out transform hover:scale-125 hover:text-black" type="submit">Query</button>
     </form>
     <% if(qarray.length>0){ %>
         <div class="mx-auto px-4 grid grid-cols-12 gap-1">
